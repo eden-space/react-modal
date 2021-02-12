@@ -15,10 +15,10 @@
 	<a href="https://github.com/malakirti/react-modal">
 		<img align="center" src="https://img.shields.io/github/package-json/v/malakirti/react-modal?label=github%40latest&logo=github" alt="version">
 	</a>
-	<a href="https://github.com/malakirti/react-modal/blob/main/package.json">
+	<a href="https://github.com/malakirti/react-modal/blob/main/package.json#L76">
 		<img align="center" src="https://img.shields.io/npm/dependency-version/react-better-modal/peer/react?logo=react" alt="react">
 	</a>
-	<a href="https://github.com/malakirti/react-modal/blob/main/package.json">
+	<a href="https://github.com/malakirti/react-modal/blob/main/package.json#L77">
 		<img align="center" src="https://img.shields.io/npm/dependency-version/react-better-modal/peer/react-dom?logo=react" alt="react">
 	</a>
 </div>
