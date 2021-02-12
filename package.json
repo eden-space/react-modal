@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "author": {
-		"name": "malakirti",
-		"email": "vimalakirti409@gmail.com"
-	},
+    "name": "malakirti",
+    "email": "vimalakirti409@gmail.com"
+  },
   "description": "Accessible modal dialog component for React",
   "scripts": {
     "start": "rollup -c -w",
