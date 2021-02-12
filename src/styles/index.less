@@ -1,0 +1,259 @@
+@import "dark";
+
+@white: #fff;
+@mask-bg-color: #000;
+@bg-color: #fff;
+@font-color: rgba(0, 0, 0, 0.85);
+@primary-color: #ff6358;
+
+@title-bar-font-color: @white;
+@title-bar-bg-color: @primary-color;
+@title-bar-border-color: #ff6358;
+
+@footer-font-color: @white;
+@footer-bg-color: @white;
+@footer-border-color: #f0f0f0;
+
+.rm-mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: @mask-bg-color;
+	opacity: 0.5;
+}
+.rm-window {
+	position: absolute;
+	z-index: 10002;
+	box-sizing: border-box;
+	display: inline-flex;
+	flex-direction: column;
+	padding: 0;
+	font-size: 14px;
+	line-height: 20 / 14;
+	color: @font-color;
+	background-color: @bg-color;
+	border: 0 solid rgba(0, 0, 0, 0.08);
+	border-radius: 0;
+	outline: 0;
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.06);
+	&:focus,
+	&.rm-state-focused {
+		box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.3);
+	}
+}
+
+// title bar
+.rm-window-title-bar {
+	display: flex;
+	flex-direction: row;
+	flex-shrink: 0;
+	align-items: center;
+	padding: 16px;
+	color: @title-bar-font-color;
+	white-space: nowrap;
+	user-select: none;
+	background-color: @title-bar-bg-color;
+	border-bottom: 1px solid @title-bar-border-color;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	.window-title {
+		display: flex;
+		flex: 1 1;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		padding-right: 4px;;
+		margin: 0;
+		overflow: hidden;
+		font-size: 16px;
+		line-height: 20 / 16;
+		.text {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+	.window-actions {
+		display: flex;
+		flex-direction: row;
+		flex-shrink: 0;
+		align-items: center;
+		margin: -5px;
+	}
+}
+
+.rm-window-minimized .rm-window-title-bar {
+	border-width: 0;
+}
+
+// content
+.rm-window-content {
+	position: relative;
+	flex: 1 1 auto;
+	padding: 16px 16px;
+	overflow: auto;
+	background: none;
+	border-color: inherit;
+	border-width: 0;
+	outline: 0;
+}
+
+// footer
+.rm-window-footer {
+	display: flex;
+	align-content: center;
+	justify-content: flex-end;
+	padding: 10px 16px;
+	color: @footer-font-color;
+	background: @footer-bg-color;
+	border-top: 1px solid @footer-border-color;
+	button + button {
+		margin-left: 10px;
+	}
+	.footer-button {
+		height: 32px;
+		padding: 4px 15px;
+		color: @font-color;
+		text-align: center;
+		background: transparent;
+		border: 1px solid @footer-border-color;
+		border-radius: 2px;
+		transition: all 0.218s ease-in-out;
+
+		&:hover {
+			color: @primary-color;
+			border: 1px solid @primary-color;
+		}
+
+		&.button-primary {
+			color: @white;
+			background-color: @primary-color;
+
+			&:hover::before {
+				opacity: 0.18;
+			}
+		}
+	}
+}
+
+// resize
+.rm-resize-handle {
+	position: absolute;
+	z-index: 200;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-color: inherit;
+	&.n {
+		top: -3px;
+		left: 0;
+		width: 100%;
+		height: 6px;
+		cursor: n-resize;
+	}
+	&.e {
+		top: 0;
+		right: -3px;
+		width: 6px;
+		height: 100%;
+		cursor: w-resize;
+	}
+	&.s {
+		bottom: -3px;
+		left: 0;
+		width: 100%;
+		height: 6px;
+		cursor: s-resize;
+	}
+	&.w {
+		top: 0;
+		left: -3px;
+		width: 6px;
+		height: 100%;
+		cursor: w-resize;
+	}
+	&.se,
+	&.sw,
+	&.ne,
+	&.nw {
+		width: 6px;
+		height: 6px;
+	}
+	&.se {
+		right: -3px;
+		bottom: -3px;
+		cursor: se-resize;
+	}
+	&.sw {
+		bottom: -3px;
+		left: -3px;
+		cursor: sw-resize;
+	}
+	&.ne {
+		top: -3px;
+		right: -3px;
+		cursor: ne-resize;
+	}
+	&.nw {
+		top: -3px;
+		left: -3px;
+		cursor: nw-resize;
+	}
+}
+
+// button
+.rm-button {
+	position: relative;
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px 8px;
+	font-size: 14px;
+	line-height: 20 / 14;
+	color: inherit;
+	text-align: center;
+	text-decoration: none;
+	text-transform: none;
+	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	outline: none;
+	box-shadow: none;
+	transition: color 0.218s ease-in-out;
+	&::before {
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		bottom: -1px;
+		left: -1px;
+		z-index: 0;
+		display: block;
+		pointer-events: none;
+		content: '';
+		background: currentColor;
+		border-radius: inherit;
+		opacity: 0;
+		transition: opacity 0.218s ease-in-out;
+	}
+	&:hover::before {
+		opacity: 0.08;
+	}
+}
+
+// icon
+.rm-button-icon {
+	width: calc(20 / 14 * 1em + 10px);
+	height: calc(20 / 14 * 1em + 10px);
+}
+
+.rm-icon {
+	width: 1em;
+	height: 1em;
+	font-size: 14px;
+	fill: currentColor;
+}
