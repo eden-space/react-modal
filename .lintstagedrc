@@ -1,3 +1,4 @@
 {
-	"src/**/*.{ts,tsx}": "npm run lint"
+	"src/**/*.less": "npm run lint:styles",
+	"src/**/*.{ts,tsx}": "npm run lint:scripts"
 }
