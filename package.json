@@ -16,7 +16,7 @@
 		"lint-staged": "lint-staged",
 		"commitlint": "commitlint -e .git/COMMIT_EDITMSG",
 		"prestart": "npm run clean",
-		"prebuild": "npm run lint && npm run clean && npm run svgo",
+		"prebuild": "npm run lint:styles && npm run lint:scripts && npm run clean && npm run svgo",
 		"prepublish": "npm run build",
 		"lint:styles": "stylelint src/**/*.less --syntax less",
 		"lint:scripts": "eslint --fix --ext .ts,.tsx src",
