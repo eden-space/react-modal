@@ -6,7 +6,7 @@
 		"name": "malakirti",
 		"email": "vimalakirti409@gmail.com"
 	},
-	"description": "Accessible modal dialog component for React",
+	"description": "Accessible modal dialog popup window component for React",
 	"scripts": {
 		"start": "rollup -c -w",
 		"build": "rollup -c",
@@ -97,11 +97,13 @@
 	],
 	"keywords": [
 		"react",
-		"reat-maodl",
+		"reat-modal",
 		"reat-dialog",
+		"react-popup",
 		"reat-window",
 		"modal",
 		"dialog",
+		"popup",
 		"window",
 		"react-component"
 	],
